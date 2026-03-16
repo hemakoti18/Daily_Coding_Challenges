@@ -1,0 +1,14 @@
+# Steps followed 
+1.Observed how was the data with data types and fields.
+2.Checked for blanks,null,inconsistent data,duplicates.
+3.created a new feature "Revenue" field.
+4.Created pivot tables to show:
+~ Total revenue by region.
+~ Total revenue by product category.
+5.Identified top 5 performing products by revenue 
+  by using sumif() formula & sort (largest to smallest) & number filter (top 5).
+6.create a column chart to visualize revenue by region.
+
+# Challenges faced
+To visualize revenue by region in chart, i want to show regions revenue from highest to smallest 
+but sort option available for region only, "so i manually take sort option from home tab in editing for sorting largest to smallest.
