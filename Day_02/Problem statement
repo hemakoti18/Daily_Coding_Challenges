@@ -1,8 +1,10 @@
+# Day_02
 Educational Analytics: Impact of Screen Time on Student Performance
 
+# Problem Statement
 The Education Department is conducting a study to explore the impact of screen time on student academic performance and lifestyle habits.
 You are provided with a dataset that includes various parameters such as 
-study hours, 
+study hours,
 screen time, 
 test scores, 
 and extracurricular activities.
