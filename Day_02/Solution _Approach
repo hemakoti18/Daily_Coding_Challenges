@@ -1,0 +1,21 @@
+Followed 4 steps process
+
+1.Data Cleaning
+o Identify and handle missing values 
+o Remove duplicate records 
+o Ensure consistent formatting (e.g., numeric columns, proper column names) 
+
+2. Data Transformation
+o Created 3 calulated fields
+  Screen_Time_Status | Marks_Status | Grade
+
+3.Pivot Tables 
+o Used pivot tables to analyze: 
+  ▪ Average test scores by screen time category 
+  ▪ Screen time vs. extracurricular activity trends 
+  ▪ Age group-wise performance 
+
+4. Charts & Dashboards 
+o Created visualizations: 
+  ▪ A scatter plot of Screen Time vs. Test Scores 
+  ▪ A bar chart comparing average test scores across screen time ranges
