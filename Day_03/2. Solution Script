@@ -1,1 +1,28 @@
+1.Data Cleaning and preparation 
+  • Remove duplicates
+  • Replace nulls and blanks with appropriate values
+  • Formatted data into consistent with proper format
+  • Formated table for further analysis
+  • Created new calculated fields
 
+2.Pivot tables and charts
+  • Health Status by Age Group
+  • Nutrient Intake vs. BMI
+  • Correlation of Sugar and Screen
+  • Regional Differences
+
+3.Dashboard
+  • Added all key KPI's 
+    Total Children | Under weight | Healthy weight | Avg BMI | Avg Weight | Avg Height | Avg Age
+  • Charts 
+    Regional status | Health Status | Correlation Status | BMI status
+  • Slicers
+    Age Group | region | Gender | Health Status
+
+4.Summary:
+           • The data consists of 200 children with 52 male and 48 female.
+           • The Avg screen time of Healthy weight children 1.6 hrs.
+           • Out of 200 children, 76 children are under weight and among all regions east and south has shared highest under weight children with  16.3 avg BMI.
+           • Under weight has 35 female & 41 male children.
+           • Healthy weight has 13 female & 11 male children.
+           • children in the East and south region tends to have lower BMI values compared to other regions - indicates low nutrition issue.
