@@ -1,0 +1,14 @@
+Procedure followed:
+1.data cleaning in power query
+2.data modeling - 1 to many relationship
+  batch_data[batch_id] - production_data[batch_id]
+3.create dax measures
+  • overall defect rate
+  • Defective items count
+  • Daily defect rate
+  • overall production
+  • Defect rate
+  • overall rate
+4.Add a slicer for Date to allow the user to filter all visuals by a specific time 
+  period. 
+   
