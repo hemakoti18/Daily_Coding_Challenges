@@ -1,0 +1,8 @@
+# Day_07
+Problem Statement : Quality control over product defects
+create a "Quality control" dashboard to monitor and identify key areas of concern,and track product defects.
+
+Given dataset consists
+1.Production: Contains ProductID, BatchID, Date, and Status (Pass or Fail). 
+2.Batches: Contains BatchID, ProductionLine, and InspectorName. 
+Total 150 records.
