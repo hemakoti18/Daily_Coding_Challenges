@@ -1,0 +1,170 @@
+# create database customer order analysis
+create database `customer order analysis` ;
+# use database
+use `customer order analysis` ;
+# create tables
+# 1.customers
+CREATE TABLE customers ( 
+    customer_id INT PRIMARY KEY, 
+    customer_name VARCHAR(100), 
+    city VARCHAR(50) 
+); 
+# insert values
+INSERT INTO customers VALUES 
+(1, 'Amit', 'Bangalore'), 
+(2, 'Sneha', 'Mumbai'), 
+(3, 'Rahul', 'Delhi'), 
+(4, 'Priya', 'Chennai'); 
+
+# 2.Orders
+CREATE TABLE orders ( 
+    order_id INT PRIMARY KEY, 
+    customer_id INT, 
+    order_date DATE,
+	amount DECIMAL(10,2) 
+); 
+# insert values
+INSERT INTO orders VALUES 
+(101, 1, '2024-01-10', 500), 
+(102, 1, '2024-02-15', 700), 
+(103, 2, '2024-03-01', 300), 
+(104, 5, '2024-03-05', 900); 
+
+# 3.Payments
+CREATE TABLE payments ( 
+    payment_id INT PRIMARY KEY, 
+    order_id INT, 
+    payment_status VARCHAR(20) 
+); 
+# insert values
+INSERT INTO payments VALUES 
+(1, 101, 'Completed'), 
+(2, 102, 'Pending'), 
+(3, 103, 'Completed');
+
+# Tasks 
+# Task 1: Customer Orders 
+# Write a query to display: 
+# • customer_name  
+# • order_id  
+# • amount  
+# Include only customers who placed orders.
+select 
+	c.customer_name,
+    o.order_id,
+    o.amount
+from customers c
+join orders o on o.customer_id = c.customer_id ;
+
+# Task 2: All Customers 
+# Write a query to display: 
+# • all customers  
+# • their order_id (if any)  
+# Customers without orders should still appear.
+select 
+      c.*,
+      order_id
+from customers c
+left join orders o on o.customer_id = c.customer_id ;
+
+# Task 3: Invalid Orders 
+# Write a query to find: 
+# • orders that do NOT have a matching customer
+# • customers that do not have order id 
+select
+    c.customer_name,
+    o.*
+from orders o
+left join customers c on c.customer_id = o.customer_id
+where c.customer_id is not null;
+
+#  Task 4: Order Payment Status 
+# Write a query to display: 
+# • customer_name  
+# • order_id  
+# • payment_status  
+# Include all orders, even if payment is missing.
+-- FULL OUTER JOIN simulation in MySQL
+select  
+    c.customer_id,
+    c.customer_name,
+    o.order_id,
+    p.payment_status
+from customers c
+left join orders o on o.customer_id = c.customer_id
+left join payments p on p.order_id = o.order_id
+union
+
+select  
+    c.customer_id,
+    c.customer_name,
+    o.order_id,
+    p.payment_status
+from customers c
+right join orders o on o.customer_id = c.customer_id
+right join payments p on p.order_id = o.order_id;
+
+#  Task 5: Customers Without Orders 
+# Find customers who have never placed an order.
+select
+	c.customer_id,
+    c.customer_name,
+    o.*
+from customers c
+left join orders o on o.customer_id = c.customer_id 
+where o.customer_id is null ;
+
+#  Task 6: Orders Without Payment 
+# Find all orders that do not have a payment record. 
+select 
+      c.customer_name,
+      o.*,
+      p.payment_status
+from orders o
+left join payments p on p.order_id = o.order_id
+left join customers c on c.customer_id = o.customer_id
+where p.order_id is null ;
+
+#  Task 7: Total Spending 
+# Write a query to calculate: 
+# • total amount spent by each customer  
+select
+	c.customer_name,
+    coalesce(sum(o.amount),0) as total_amount
+from customers c
+left join orders o 
+	   on o.customer_id = c.customer_id 
+group by c.customer_name ;
+
+# Task 8: Fully Paid Customers 
+# Find customers whose all orders are marked as 'Completed'. 
+select
+	c.customer_name,
+    o.order_id,
+    p.payment_status
+from customers c
+left join orders o on o.customer_id = c.customer_id
+left join payments p on p.order_id = o.order_id 
+where payment_status  in ('completed') ;
+
+# Task 9: Highest Order Per Customer 
+# Display: 
+# • customer_name  
+# • highest order amount 
+select
+	c.customer_name,
+    coalesce(max(o.amount),0) as highest_order_amount
+from customers c
+left join orders o on o.customer_id = c.customer_id 
+group by c.customer_name 
+order by highest_order_amount desc ;   
+
+# Task 10: Top Customers 
+# Find top 2 customers based on total spending.
+select 
+	c.customer_name,
+    coalesce(sum(amount),0) as total_amount 
+from customers c
+left join orders o on o.customer_id = c.customer_id
+group by c.customer_name
+order by total_amount desc limit 2 ;
