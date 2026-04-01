@@ -1,0 +1,59 @@
+# sales analysis database
+create database sales_analysis;
+
+# database use
+use sales_analysis;
+
+# create table
+CREATE TABLE Sales ( 
+    sale_id INT PRIMARY KEY, 
+    customer_name VARCHAR(50), 
+    city VARCHAR(50), 
+    product_name VARCHAR(50), 
+    category VARCHAR(50), 
+    quantity INT, 
+    price DECIMAL(10,2), 
+    sale_date DATE 
+); 
+
+# inserting values
+INSERT INTO Sales VALUES 
+(1, 'Ravi', 'Bangalore', 'Laptop', 'Electronics', 1, 60000, '2023-06-01'), 
+(2, 'Priya', 'Chennai', 'Mobile', 'Electronics', 2, 20000, '2023-06-03'), 
+(3, 'Amit', 'Delhi', 'Headphones', 'Accessories', 3, 2000, '2023-06-05'), 
+(4, 'Neha', 'Mumbai', 'Chair', 'Furniture', 2, 5000, '2023-06-07'), 
+(5, 'Ravi', 'Bangalore', 'Mobile', 'Electronics', 1, 20000, '2023-06-10'), 
+(6, 'Priya', 'Chennai', 'Laptop', 'Electronics', 1, 60000, '2023-06-12'), 
+(7, 'Amit', 'Delhi', 'Chair', 'Furniture', 4, 5000, '2023-06-15'), 
+(8, 'Neha', 'Mumbai', 'Headphones', 'Accessories', 2, 2000, '2023-06-18'); 
+
+ # Challenge Questions  
+# 1. Show all records from the Sales table.  
+select * from sales;
+
+# 2. Display only customer names and cities.
+select customer_name,city from sales;
+
+# 3. Show product name and price. 
+select product_name, price from sales;
+
+# 4. Show all sales where city is 'Bangalore'.
+select * from sales where city = "bangalore";
+
+# 5. Find all products in 'Electronics' category. 
+select * from sales where category = "Electronics";
+
+# 6. Show sales where price is greater than 10,000.  
+select * from sales where price > 10000;
+
+# 7. Display sales where quantity is more than 2.  
+select * from sales where quantity > 2;
+
+# 8. Show all sales sorted by price (low to high).  
+select * from sales order by price asc;
+
+# 9. Display sales sorted by quantity (high to low). 
+select * from sales order by quantity desc;
+
+# 10. Show unique cities. 
+select distinct city from sales;
