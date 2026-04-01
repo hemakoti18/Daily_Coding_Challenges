@@ -1,1 +1,29 @@
- College Student Management System
+Domain: 
+College Student Management System
+
+problem: 
+analyze a college which maintains  students, courses, marks.
+
+Questions:
+Level 1: Very Basic 
+1. Display all students.  
+2. Display only student_name and city from students table.  
+3. Show all courses.  
+4. Display students who are from Tumakuru.  
+5. Display students who joined in 2024. 
+Level 2: Filtering 
+6. Show students whose gender is F.  
+7. Show marks greater than 80.  
+8. Display course names from Commerce department.  
+9. Show students who are not from Bengaluru.  
+10. Display marks between 70 and 90.  
+Level 3: Sorting 
+11. Display all students ordered by student_name ascending.  
+12. Show marks ordered from highest to lowest.  
+13. Display students ordered by join_year descending.  
+Level 4: Aggregate Basics 
+14. Find total number of students.  
+15. Find average marks.  
+16. Find highest marks.  
+17. Find lowest marks.  
+18. Find total marks scored by all students.
