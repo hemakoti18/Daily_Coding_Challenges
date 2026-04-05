@@ -13,3 +13,8 @@ tables.
 plot_name, crop_type, and average_yield_kg. 
 • Calculate the total water consumption for each plot and rank them from highest to 
 lowest. Show plot_name and total_water_liters. 
+2. Yield & Environmental Analysis 
+• Determine the average yield for each crop type under different weather conditions. The 
+output should have crop_type, weather_condition, and average_yield_kg. 
+• Find the highest-yielding plot for each soil type. Show the soil_type, plot_name, and 
+highest_yield_kg. 
