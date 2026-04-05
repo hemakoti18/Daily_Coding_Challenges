@@ -8,3 +8,8 @@ decisions for the next season.
 The Tasks  
 Write SQL queries to answer the following questions. Provide the queries and the resulting 
 tables.
+1. Productivity & Performance 
+• Identify the top 3 most productive plots based on average yield per harvest. Show the 
+plot_name, crop_type, and average_yield_kg. 
+• Calculate the total water consumption for each plot and rank them from highest to 
+lowest. Show plot_name and total_water_liters. 
