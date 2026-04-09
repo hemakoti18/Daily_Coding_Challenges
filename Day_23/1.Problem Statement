@@ -1,0 +1,22 @@
+Problem : Ola Defect Analysis 
+
+Tasks (STRICTLY USING STRINGS) 
+  Task 1: Clean the Data 
+• Convert entire string to lowercase  
+ 
+  Task 2: Count Total Complaints 
+• Count how many rides (records) are present  
+ 
+  Task 3: Count "Late Arrival" Issues 
+• Count how many times "late arrival" appears  
+ 
+  Task 4: Find Complaints from Bangalore 
+• Count how many times "bangalore" appears  
+ 
+  Task 5: Extract First Driver Name 
+• From first record → extract driver name  
+ 
+  Task 6: Replace Issue Names (Standardization) 
+• Replace all:  
+o "rude behavior" → "rude_behavior"  
+o "late arrival" → "late_arrival" 
