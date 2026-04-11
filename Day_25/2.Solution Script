@@ -1,0 +1,20 @@
+
+Challenge 1: Student Name Formatting 
+
+# A student database stores names in inconsistent formats. 
+# Task 
+# Convert all names to proper case (First letter capital).
+# Input:
+#       students = ("sunitha", "RAVI", "aNu"
+• Code
+students = ("sunitha", "RAVI", "aNu")
+result = []
+for name in students:
+  result.append(name.capitalize())
+proper_case = tuple(result)
+print(proper_case)
+
+# Another Approach
+students = ("sunitha", "RAVI", "aNu")
+propercase=tuple(name.capitalize() for name in students)
+print(propercase)
