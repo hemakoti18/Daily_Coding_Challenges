@@ -1,3 +1,3 @@
-Daily_Coding_Challenges
-
+# Daily_Coding_Challenges
+--------------------------
 Day_01: Regional Sales Analysis
