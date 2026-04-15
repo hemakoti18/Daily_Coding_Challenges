@@ -7,7 +7,7 @@
 | Day_01    | Regional Sales Analysis                              | Excel      |  Pivot tables, Pivot charts                              |
 
 
-<img src="Day_02/Student_Analysis.png" alt="Student Analysis Dashboard" width="1000" height="1000"/>
+<img src="Day_02/Student_Analysis.png" alt="Student Analysis Dashboard" width="800" height="1000"/>
 
 | Day       | Challenge                                                  | Tool       |  Key Skills Praticed                                     |
 |-----------|------------------------------------------------------------|------------|----------------------------------------------------------|
