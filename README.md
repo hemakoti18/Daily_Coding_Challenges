@@ -2,7 +2,7 @@
 --------------------------
 ##  Day_01                            
  
-| Day       | Challenge                                            | Tool       |  Key Skills Applied                                      |
+| Day       | Challenge                                            | Tool       |  Methods Used                                            |
 |-----------|------------------------------------------------------|------------|----------------------------------------------------------|
 | 1         | Regional Sales Analysis                              | Excel      |  • Pivot tables <br> • Pivot charts                      |
 
