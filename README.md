@@ -17,7 +17,7 @@
 | Day_02    | Impact of Screen Time on Student Performance Analysis      | Excel      |  Pivot tables, Pivot charts                              |
 
 
-<img src="Day_02/Student_Analysis.png" alt="Student Analysis Dashboard" width="600"/>
+<img src="Day_02/Student_Analysis.png" alt="Student Analysis Dashboard" height="600"/>
 
 
 
