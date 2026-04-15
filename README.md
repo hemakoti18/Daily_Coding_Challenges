@@ -7,18 +7,17 @@
 | Day_01    | Regional Sales Analysis                              | Excel      |  Pivot tables, Pivot charts                              |
 
 
-
+<img src="Day_02/Student_Analysis.png" alt="Student Analysis Dashboard" width="1000" height="1000"/>
 
 | Day       | Challenge                                                  | Tool       |  Key Skills Praticed                                     |
 |-----------|------------------------------------------------------------|------------|----------------------------------------------------------|
 | Day_02    | Impact of Screen Time on Student Performance Analysis      | Excel      |  Pivot tables, Pivot charts                              |
 
-<img src="Day_02/Student_Analysis.png" alt="Student Analysis Dashboard" width="1000" height="1000"/>
 
 
 
 
-![Student Analysis](Day_02/Student_Analysis.png)
+
 
 - Day_02: Impact of Screen Time on Student Performance Analysis (Excel)
 - Day_03: "Healthy Kids" Nutrition & Growth Analysis (Excel)
