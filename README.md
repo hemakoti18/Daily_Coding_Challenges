@@ -7,6 +7,8 @@
 | Day_01    | Regional Sales Analysis                              | Excel      |  Pivot tables, Pivot charts                              |
 
 ![Regional Sales Analysis Report](Day_01/Revenue_by_Region-(Day_01).png)
+<img src="Day_01/Revenue_by_Region-(Day_01).png" alt="Regional Sales Analysis Report" width="800"/>
+
 
 
 
