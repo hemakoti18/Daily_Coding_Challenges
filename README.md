@@ -29,6 +29,7 @@
 ### Insights
 - High screen time students has less average test scores.
 
+# SQL
 
 ## Day_14
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
