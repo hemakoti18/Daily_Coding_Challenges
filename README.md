@@ -44,8 +44,10 @@
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
 | 16   | Customer Segmentation Analysis           | SQL    | 1. Between Clause <br> 2. Aggregation + Group by <br> 3. Conditional Expression ( case when end )                                                                  with select <br> 4. Group by + Having Clause
-
-
+## Day_17
+| Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
+|------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
+| 17   | Customer Orders Analysis                 | SQL    | 1.Left Join <br> 2.Right Join <br> 3.Left Join + Union + Right Join 4.Coalesce                     |
 ## Day_19
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
