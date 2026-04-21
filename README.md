@@ -29,12 +29,18 @@
 ### Insights
 - High screen time students has less average test scores.
 
+
 ## Day_14
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
 | 14   | Sales Analysis                           | SQL    | 1. Select <br> 2. Where <br> 3. Order by <br> 4. Distinct
-## Day_19
 
+## Day_15
+| Day  | Challenge Title                            | Tool   | Methods used                                                                                       |
+|------|--------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
+| 15   | College Student Management System  Analysi | SQL    | 1.Ranking window function ( row_number ) <br> 2.Join + where <br> 3.Aggregate functions            |
+
+## Day_19
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
 |  19  |    Farm Yield Optimization Analysis      |    SQL | 1.Inner Join <br> 2.With CTE as <br> 3.Subquery <br> 4.Extract <br> 5.Monthname <br> 6.Date_format |  
