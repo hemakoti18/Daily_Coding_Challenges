@@ -1,6 +1,6 @@
 # Daily_Coding_Challenges
 --------------------------
-# Excel
+# **Excel**
 ##  Day_01                            
  
 | Day       | Challenge Title                                      | Tool       |  Methods Used                                            |
