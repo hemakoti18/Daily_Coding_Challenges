@@ -2,7 +2,7 @@
 --------------------------
 ##  Day_01                            
  
-| Day       | Challenge                                            | Tool       |  Methods Used                                            |
+| Day       | Challenge Title                                           | Tool       |  Methods Used                                            |
 |-----------|------------------------------------------------------|------------|----------------------------------------------------------|
 | 1         | Regional Sales Analysis                              | Excel      |  • Pivot tables <br> • Pivot charts                      |
 
