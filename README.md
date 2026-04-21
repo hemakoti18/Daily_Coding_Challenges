@@ -51,7 +51,7 @@
 ## Day_18
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
-| 18   |  Social Media Data Analysis              | SQL    | 1.
+| 18   |  Social Media Data Analysis              | SQL    | 1.Ranking Window Function ( Row_Number ) + left join + Group by + limit <br> 2.Subquery in Select                                                       <br> 3.Subquery in From <br> 4.Conditional Expression ( case when end ) <br> 5.Join + Group by + Order by + Limit
 
 ## Day_19
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
