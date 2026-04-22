@@ -66,6 +66,11 @@ ________________________________________________________________________________
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
 | 21   | Insurance Claims Analysis                | SQL    | 1.Subquery in where <br> 2.Subquery in from <br> 3.With CTE + (Select + where + Subquery) <br>                                                                      4.Aggregates without collapsing
+
+# Python 
+| Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
+|------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
+
 ## Pending
 - Day_03: "Healthy Kids" Nutrition & Growth Analysis (Excel)
 - Day_05:  IT Help Desk Ticket Analysis (Excel)
