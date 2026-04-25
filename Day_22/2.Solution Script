@@ -1,1 +1,78 @@
 
+*******   Insurance Claims Analysis  ********
+Tasks 
+
+Task 1: Declare the variables and assign the values as above with appropriate Data Type 
+order_id = "ORD12345"
+customer_name = "Rahul"
+product_price = 799.99
+quantity = 3
+discount = 0.10
+is_member = True
+
+Task 2: Identify Data Types 
+-- print(type(order_id))
+-- print(type(customer_name))
+-- print(type(product_price))
+-- print(type(quantity))
+-- print(type(discount))
+-- print(type(is_member))
+
+Print the data type of each variable using type(). 
+<class 'str'>
+<class 'str'>
+<class 'float'>
+<class 'int'>
+<class 'float'>
+<class 'bool'>
+
+Task 3: Calculate Total Price 
+• Total price before discount 
+-- print(round(product_price * quantity,2))
+   2399.97
+
+
+Task 4: Apply Discount 
+• Total price after discount 
+-- print(product_price * discount)
+   79.99900000000001
+
+  
+ Task 5: Add GST (18%) 
+• Calculate GST on the final price  
+-- " Total_price = product_price * quantity
+-- " Discount_amount = Total_price * discount
+-- " Final_price = Total_price - Discount_amount
+-- " Gst = Final_price * 0.18
+-- " Gst_final_price = Final_price + Gst
+-- print(round(Total_price,2))
+-- print(round(Discount_amount))
+-- print(round(Final_price))
+-- print(round(Gst))
+-- print(round(Gst_final_price))
+
+2399.97
+240
+2160
+389
+2549
+
+
+• Add it to get the final bill amount  
+-- print(Gst_final_price)
+   2548.7681400000006
+
+ 
+ Task 6: Display Output 
+Print the final bill in a clean format:
+-- print(f"order_id: {order_id}")
+-- print(f"customer_name: {customer_name}")
+-- print(f"product_price: ₹{format(product_price * quantity,',.2f')}")
+-- print(f"Discount_Applied: Yes")
+-- print(f"Final Amount(including GST): ₹{format(Gst_final_price,',.2f')}")
+
+order_id: ORD12345
+customer_name: Rahul
+product_price: ₹2,399.97
+Discount_Applied: Yes
+Final Amount(including GST): ₹2,548.77
