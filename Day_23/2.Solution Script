@@ -1,1 +1,96 @@
+Tasks (STRICTLY USING STRINGS) 
+  Task 1: Clean the Data 
+• Convert entire string to lowercase  
+-- data_clean = data.strip().lower()
+-- print(data_clean)
+output:
+ride101-ramesh-late arrival-bangalore, ride102-suresh-rude behavior-hyderabad, ride103-mahesh-late arrival-bangalore
+
+ 
+  Task 2: Count Total Complaints 
+• Count how many rides (records) are present  
+
+Code:
+-- Rides = data_clean.split(",")
+-- for i, Ride in enumerate(Rides, start=1):
+     print(f"Rides {i} : {Ride.strip()}")
+# Total Compaints
+-- Total_Complaints = len(Rides)
+-- print(f"Total_Complaints : {Total_Complaints}")
+Output:
+Rides 1 : ride101-ramesh-late arrival-bangalore
+Rides 2 : ride102-suresh-rude behavior-hyderabad
+Rides 3 : ride103-mahesh-late arrival-bangalore
+Total_Complaints : 3
+
+
+  Task 3: Count "Late Arrival" Issues 
+• Count how many times "late arrival" appears  
+variable:
+-- late_arrival_count = data_clean.count("late arrival")
+Code:
+-- print(f"Late Arrival Count : {late_arrival_count}")
+Output:
+Late Arrival Count : 2
+
+
+ 
+  Task 4: Find Complaints from Bangalore 
+• Count how many times "bangalore" appears  
+Variable:
+Bangalore_Complaints = ["bangalore" in Ride for Ride in Rides]
+Code:
+print(f"Bangalore_Complaints : {Bangalore_Complaints}")
+print(f"Bangalore_Complaints : {sum(Bangalore_Complaints)}")
+Output:
+Bangalore_Complaints : [True, False, True]
+Bangalore_Complaints : 2
+
+ 
+  Task 5: Extract First Driver Name 
+• From first record → extract driver name  
+# Take first_record
+"""
+Rides =
+[ ride101-ramesh-late arrival-bangalore,------ 0
+  ride102-suresh-rude behavior-hyderabad,----- 1
+  ride103-mahesh-late arrival-bangalore ]----- 2
+"""
+First_Record = Rides[0]
+# Split First Record
+Parts = First_Record.split("-")
+# 'ride101' - 'ramesh' - 'late arrival'- 'bangalore'
+First_Driver_Name = Parts[1]
+print(f"First_Driver_Name : {First_Driver_Name}")
+Output:
+First_Driver_Name : ramesh
+
+ 
+  Task 6: Replace Issue Names (Standardization) 
+• Replace all:  
+o "rude behavior" → "rude_behavior"  
+o "late arrival" → "late_arrival"  
+
+Code:
+# Traditional loop
+Standardized_Rides = [] #  empty list create chesukovali
+for Ride in Rides:
+   # Step 1: Replace "rude behavior" → "rude_behavior"
+   Ride = Ride.replace("rude behavior", "rude_behavior")
+
+   # Step 2: Replace "late arrival" → "late_arrival"
+   Ride = Ride.replace("late arrival", "late_arrival")
+
+   # Step 3: Append standardized ride into list
+   Standardized_Rides.append(Ride)
+
+for i, Ride in enumerate(Standardized_Rides, start=1):
+  print(f"Ride {i} : {Ride}")
+
+Output:
+Ride 1 : ride101-ramesh-late_arrival-bangalore
+Ride 2 : ride102-suresh-rude_behavior-hyderabad
+Ride 3 : ride103-mahesh-late_arrival-bangalore
+
+
 
