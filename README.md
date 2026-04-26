@@ -76,7 +76,7 @@ ________________________________________________________________________________
 # Python 
 | Day  | Challenge Title                          | Tool   | Methods used                                                                                       |
 |------|------------------------------------------|--------|----------------------------------------------------------------------------------------------------|
-| 
+| 23   |  Ola Defect Analysis                     | Python |  1.Strip().lower() <br> 2.For loop + enumerate() for index and split() <br> 3.count() and list comprehension <br> 4. Traditional loop (for loop) & list comprehension
 ## Pending
 - Day_03: "Healthy Kids" Nutrition & Growth Analysis (Excel)
 - Day_05:  IT Help Desk Ticket Analysis (Excel)
