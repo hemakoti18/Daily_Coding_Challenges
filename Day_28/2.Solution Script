@@ -1,1 +1,94 @@
+                               Tasks 
+____________________________________________________________________________
+
+ Task 1: Total Approved Claim Amount 
+Calculate the total claim amount for all Approved claims. 
+---------------------------------------------------------
+Code:
+# for loop ---- range () + indexing
+total_claim_amount = 0
+for i in range(len(claim_amounts)):
+  if claim_status[i] == "Approved":
+    total_claim_amount += claim_amounts[i]
+print(f"Total Claim Amount : {total_claim_amount}")
+
+Output:
+Total Claim Amount : 44000
+__________________________________________________________________________________
+
+ Task 2: Count Rejected Claims 
+Find how many claims are Rejected. 
+-----------------------------------
+Code:
+# count
+rejected_claims = claim_status.count("Rejected")
+print(f"Rejected Claims : {rejected_claims}")
+
+Output:
+Rejected Claims : 2
+___________________________________________________________________________________
+
+ Task 3: High-Value Claims 
+Print all policy IDs where claim amount is greater than ₹10,000. 
+----------------------------------------------------------------
+
+Code:
+# for loop
+policy_id = []
+for i in range(len(policy_ids)):
+  if claim_amounts[i] > 10000:
+    policy_id.append(policy_ids[i])
+print(f"Policy_id : {policy_id}")
+
+Output:
+Policy_id : [102, 104, 106]
+_____________________________________________________________________________________
+ 
+ Task 4: Average Age of Approved Customers 
+Find the average age of customers whose claims are Approved. 
+------------------------------------------------------------
+
+Code:
+# for loop
+total_age = 0
+approved_count = claim_status.count("Approved")
+for i in range(len(customer_age)):
+  if claim_status[i] == "Approved":
+    total_age += customer_age[i]
+avg_age = total_age / approved_count
+print(f"Average Age of Approved Claims: {avg_age}")
+
+Output:
+Average Age of Approved Claims: 37.5
+_______________________________________________________________________________________
+ 
+ Task 5: Risk Category Tagging 
+Create a new list called risk_category: 
+• Age < 30 → "Low Risk"  
+• Age 30–45 → "Medium Risk"  
+• Age > 45 → "High Risk" 
+----------------------------------------
+
+Code:
+category = []
+for age in customer_age:
+  if age < 30:
+    category.append("Low Risk")
+  elif age >= 30 and age <= 45:
+    category.append("Medium Risk")
+  else:
+    category.append("High Risk")
+risk_category = list(zip(customer_age, category))
+for status in risk_category:
+  print(status)
+
+Output:
+(25, 'Low Risk')
+(45, 'Medium Risk')
+(35, 'Medium Risk')
+(50, 'High Risk')
+(23, 'Low Risk')
+(40, 'Medium Risk')
+
+
 
