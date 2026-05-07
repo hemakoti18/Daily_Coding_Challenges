@@ -1,1 +1,43 @@
 
+                   Tasks 
+_______________________________________________________
+
+1. Calculate total & average for each student 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Data:
+students = {
+    "Asha": {"Math": 78, "Science": 85, "English": 67},
+    "Ravi": {"Math": 35, "Science": 40, "English": 50},
+    "John": {"Math": 90, "Science": 92, "English": 88}
+}
+
+Code:
+results = {}
+for name, scores in students.items():
+    total = sum(scores.values())
+    average = total / len(scores.values())
+    results[name] = {"Total": total, "Average": round(average, 2)} # nested dictionary
+print(results)
+for name, data in results.items():
+    print(f"{name} : {data}")
+
+Output:
+{'Asha': {'Total': 230, 'Average': 76.67}, 'Ravi': {'Total': 125, 'Average': 41.67}, 'John': {'Total': 270, 'Average': 90.0}}
+Asha : {'Total': 230, 'Average': 76.67}
+Ravi : {'Total': 125, 'Average': 41.67}
+John : {'Total': 270, 'Average': 90.0}
+-------------------------------------------------------------------
+2. Identify top scorer 
+Code:
+top_scorer = {}
+max_marks = 0
+for name, data in results.items():
+  if data["Total"] > max_marks:
+    max_marks = data["Total"]
+    top_scorer[name] = {"Total" : max_marks}
+print(f"{name} - {max_marks}")
+
+Output:
+John - 270
+
+3. Find students who failed in any subject 
