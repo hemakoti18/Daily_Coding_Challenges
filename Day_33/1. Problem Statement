@@ -1,1 +1,35 @@
-
+Coding Challenge  
+  Level 1: Placement Thinking 
+1. Number Guessing Game  
+• Store a secret number (e.g., 7)  
+• Ask user to guess  
+• If guess is:  
+o Low → print "Too Low"  
+o High → print "Too High"  
+o Correct → "You Won!" and stop  
+Concept: infinite while + if 
+ 
+2. Reverse a Number 
+Input: 1234 
+Output: 4321 
+ Use while loop 
+ 
+3. Count Digits in Number 
+Input: 56789 
+Output: 5 
+ Hint: keep dividing by 10 
+ 
+  Level 2: Real-World Scenario (Data Analyst Thinking) 
+4. Sales Threshold Checker  
+You have sales values: 
+sales = [1200, 800, 1500, 400, 2000] 
+ 
+Task: 
+• Print only sales greater than 1000  
+• Count how many such sales exist  
+Concept: loop + condition filtering (real analytics logic) 
+2. Continuous Data Entry System 
+Keep asking user to enter numbers: 
+• Stop only when user enters 0  
+• Print total sum  
+ This is how real systems collect streaming data 
