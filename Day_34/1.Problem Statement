@@ -1,1 +1,44 @@
+Coding Challenge : Built in Function  Python 
 
+---------------------------------------------------------------------------
+Remove Duplicates & Preserve Order 
+Concepts: set(), list, loop 
+ Problem: 
+Given a list of student IDs, remove duplicates without changing order. 
+ids = [101, 102, 101, 103, 102, 104] 
+ Expected Output: 
+[101, 102, 103, 104] 
+ 
+Frequency Counter (Real-time analytics) 
+Concepts: dict, get(), loop 
+Problem: 
+Count how many times each product is sold. 
+products = ["apple", "banana", "apple", "orange", "banana", "apple"] 
+ Expected Output: 
+{'apple': 3, 'banana': 2, 'orange': 1} 
+ 
+Find Top Scorer 
+Concepts: max(), dict 
+Problem: 
+Find the student with highest marks. 
+marks = {"A": 85, "B": 92, "C": 88} 
+ Expected Output: 
+B 
+ 
+ 
+Common Elements in Two Lists 
+Concepts: set(), intersection() 
+ Problem: 
+Find common skills between two candidates. 
+skills1 = ["Python", "SQL", "Excel"] 
+skills2 = ["SQL", "Power BI", "Python"] 
+ Expected Output: 
+['Python', 'SQL'] 
+ 
+Sort Dictionary by Values 
+Concepts: sorted(), lambda 
+ Problem: 
+Sort products by price. 
+prices = {"apple": 50, "banana": 20, "orange": 30} 
+ Expected Output: 
+[('banana', 20), ('orange', 30), ('apple', 50)] 
