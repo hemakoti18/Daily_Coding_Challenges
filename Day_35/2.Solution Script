@@ -1,1 +1,141 @@
 
+"""
+Challenge 1: Flatten a Nested List 
+Concepts: list comprehension 
+ Problem: 
+nested = [[1, 2], [3, 4], [5]] 
+ Expected Output: 
+[1, 2, 3, 4, 5]
+
+"""
+# for loop
+nested = [[1, 2], [3, 4], [5]]
+# new list for flatten nested list 
+flat_list = []
+
+for sublist in nested:
+    for num in sublist:
+        flat_list.append(num)
+print(f"Flatten Nested List : {flat_list}")
+
+#list comprehension
+nested = [[1, 2], [3, 4], [5]]
+new_list = [ num for sub_list in nested for num in sub_list ]
+print(f"Flatten Nested List : {new_list}")
+
+# while loop
+nested = [[1, 2], [3, 4], [5]]
+flat_list = []
+
+i = 0  # బయటి లిస్ట్ ఇండెక్స్ (Outer loop index)
+
+# 1. బయటి లూప్: పెద్ద లిస్ట్‌లోని ప్రతి సబ్-లిస్ట్‌ను చూస్తుంది
+while i < len(nested):
+    sublist = nested[i]
+    j = 0  # లోపలి లిస్ట్ ఇండెక్స్ (Inner loop index)
+    
+    # 2. లోపలి లూప్: సబ్-లిస్ట్‌లోని ప్రతి నంబర్‌ను బయటకు తీస్తుంది
+    while j < len(sublist):
+        flat_list.append(sublist[j])
+        j += 1  # లోపలి ఇండెక్స్‌ను పెంచుతుంది
+        
+    i += 1  # బయటి ఇండెక్స్‌ను పెంచుతుంది
+
+print(flat_list)  # Output: [1, 2, 3, 4, 5]
+
+"""
+Challenge 2: Check Anagram 
+Concepts: sorted() 
+ Problem: 
+Check if two strings are anagrams. 
+s1 = "listen" 
+s2 = "silent" 
+Expected Output: 
+True
+
+"""
+s1 = "listen" 
+s2 = "silent" 
+if sorted(s1) == sorted(s2):
+    print(True)
+else:
+    print(False)
+
+"""
+ Challenge 3: Find Missing Number 
+Concepts: set() 
+ Problem: 
+nums = [1, 2, 4, 5] 
+Expected Output: 
+3 
+Hint: 
+Compare with full range using set difference.
+
+"""
+
+nums = [1, 2, 4, 5]
+for i in range(min(nums), max(nums)):
+    if i not in nums:
+        print(f"Missing Number : {i}")
+        break
+        
+"""
+  Challenge 4: Group Words by First Letter 
+Concepts: dict, setdefault() 
+ Problem: 
+words = ["apple", "ant", "banana", "bat"] 
+Expected Output: 
+{'a': ['apple', 'ant'], 'b': ['banana', 'bat']} 
+
+"""
+words = ["apple", "ant", "banana", "bat"]
+
+# 1. ఖాళీ డిక్షనరీని క్రియేట్ చేయడం
+result_dict = {}
+
+# 2. లూప్ ద్వారా ప్రతి పదాన్ని ప్రాసెస్ చేయడం
+for word in words:
+    first_letter = word[0]
+                           # a, b
+    result_dict.setdefault(first_letter, []).append(word)
+                           # key, default value
+# 3. అవుట్‌పుట్ ప్రింట్ చేయడం
+print(result_dict)
+
+
+# for loop + indexing
+words = ["apple", "ant", "banana", "bat"]
+words_dict = {}
+for word in words:
+    if word[0] not in words_dict:
+        words_dict[word[0]] = [word]
+    else:
+        words_dict[word[0]].append(word)
+print(f"New Dictionary : {words_dict}")
+
+
+"""
+ Challenge 5: Remove Empty Values 
+Concepts: dictionary comprehension 
+Problem: 
+data = {"a": 1, "b": None, "c": 3, "d": None} 
+ Expected Output: 
+{'a': 1, 'c': 3} 
+
+"""
+# dictionary comprehension
+data = {"a": 1, "b": None, "c": 3, "d": None}
+
+# Dictionary Comprehension ఉపయోగించి None వాల్యూస్ ఫిల్టర్ చేయడం
+clean_data = {k: v for k, v in data.items() if v is not None}
+
+print(clean_data)
+
+# for loop
+data = {"a": 1, "b": None, "c": 3, "d": None} 
+new_data = {}
+for info, values in data.items():
+    if values != None:
+        new_data[info] = values
+print(new_data)
+
