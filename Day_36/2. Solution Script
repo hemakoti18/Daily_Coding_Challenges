@@ -302,3 +302,286 @@ def rank_batches(batch_data):
 result = rank_batches(data)
 
 print(result)
+
+"""
+Sample challenge statement: 
+You are given student performance data for three batches: b7, b8, and b9. 
+Write Python user-defined functions to calculate batch-level insights and identify: 
+• best batch overall  
+• top-performing students  
+• at-risk students  
+• average attendance  
+• average assignment submission  
+• average content consumption 
+
+"""
+
+"""
+1• best batch overall  
+
+"""
+# ikkada list use chesthunaam
+
+batch_scores = {} # batch la scores ni track cheyyadaniki oka empty dictionary
+
+for student in data:
+     #row = {"batch": "b7", "name": "Anil", "consumption": 72, "live": 65, "recording": 70, "assignment_sub": 80, "assignment_score":75
+    batch = student["batch"]
+    # total_score = (72 + 65 + 70 + 80 + 75) = 362
+    total_score = (student["consumption"] + student["live"] + student["recording"] + student["assignment_sub"] + student["assignment_score"])
+    # student_average = 362 / 5 = 72.4
+    student_average = total_score / 5
+
+    if batch not in batch_scores:
+        batch_scores[batch] = [] # { b7 : [72.4, 45.0, 17.6, 83.6,33.6] }
+    #Calculation:
+        # Batch b7 Total: (72.4 + 45.0 + 17.6 + 83.6 + 33.6) = 252.2 / 5 = 50.44
+        # Batch b8 Total: (51.0 + 52.0 + 56.6 + 49.4 + 47.4) = 256.4 / 5 = 51.28
+        # Batch b9 Total: (58.6 + 60.0 + 66.4 + 57.6 + 54.6) = 297.2 / 5 = 59.44
+    batch_scores[batch].append(student_average)
+
+best_batch = None
+highest_average = 0
+
+for batch, scores in batch_scores.items():
+    score = sum(scores) / len(scores)
+    if score > highest_average:
+        highest_average = score
+        best_batch = batch
+    print(f"Batch : {batch} Average : {score:.2f}")
+print(f"Best Batch : {best_batch}, Highest Average : {highest_average}")
+
+"""
+2• top-performing students 
+
+"""   
+
+" For Overall batches "
+top_students =  [] # total 3 batches nunchi top 3 students kosam oka kotha list create chesam
+
+for student in data:
+    batch = student["batch"]
+    name = student["name"]
+    # average cheyyadaniki student each columns total chesthunnam
+    total_score = [
+        student["consumption"],
+        student["live"],
+        student["recording"],
+        student["assignment_sub"],
+        student["assignment_score"]
+    ]
+    student_average = sum(total_score) / len (total_score)
+
+    top_students.append((batch, name, student_average))
+
+top_students.sort(key=lambda x: x[2], reverse = True)
+# sorted_students = sorted(top_students.items() key=lambda x:x[1], reverse=True)
+print(f" Top 3 Students : {top_students[:3]}\n")
+
+# output:
+# Top 3 Students : [('b9', 'Vikram', 85.0), ('b8', 'Sneha', 11.6), ('b7', 'Ravi', 17.6)]
+
+
+# for presentation
+print("top 3 students from 3 batches")
+for batch, name, average in top_students[:3]:
+    print(f" batch : {batch}, ( Name : {name}, Highest_Average : {average})")
+print("-" * 50)
+
+
+
+# Method 2: Prathi Batch nundi Top Student ni chudadam (Batch-wise Top)    
+top_students = {} # bacth-wise top students kosam
+
+for student in data:
+    batch = student["batch"]
+    name = student["name"]
+
+    total_score =[
+        student["consumption"],
+        student["live"],
+        student["recording"],
+        student["assignment_sub"],
+        student["assignment_score"] 
+    ]
+    average = sum(total_score) / len(total_score)
+
+    if batch not in top_students:
+        top_students[batch] = []
+    top_students[batch].append((name,average))
+
+print("Batch-wise top 3 students")
+# KOTHAGA CHESINA CHANGE: Batch top results store cheyadaniki oka list
+batch_tops = []
+for batch, students_list in top_students.items():#students_list లోకి దానికి ఎదురుగా ఉన్న లిస్ట్ [("Pooja", 80), ("Ravi", 60)] వస్తుంది.
+    highest_average = 0
+    top_student_name = None
+    for name, average in students_list:
+        if average > highest_average:
+            highest_average = average
+            top_student_name = name # # ఇన్నర్ లూప్ ఇక్కడితో ముగిసింది
+    
+    # ఈ ప్రింట్ లైన్ ఇన్నర్ లూప్ కి బయట... కానీ ఔటర్ లూప్ కి లోపల ఉంది!
+    print(f"Batch : {batch}, (Name : {top_student_name}, Highest_average : {highest_average})")
+
+    # Ikkada batch top details ni list loki add chesthunnam
+    batch_tops.append((batch, top_student_name, highest_average))
+
+
+# IPPUDU SORT CHESTHUNNAM: Index 2 (highest_average) ni batti sort cheyali
+batch_tops.sort(key=lambda x: x[2], reverse=True)
+
+print("-" * 80)
+print("Batch-wise top 3 students descending order")
+# Final sorted outputs print cheyadam
+for batch, name, avg in batch_tops:
+    print(f"Batch : {batch}, (Name : {name}, Highest_average : {avg:.1f})")
+        
+
+"""
+3• at-risk students 
+
+"""
+# list use chesi chesam
+at_risk_students = []
+
+for student in data:
+    average = (student["consumption"] + student["live"] + student["recording"] + 
+               student["assignment_sub"] + student["assignment_score"]) / 5
+    if average < 30:
+        at_risk_students.append((student["batch"], student["name"], average))
+print(f"\nAt_Risk_Students : {at_risk_students}")
+
+# for presentation
+for batch, name, average in at_risk_students:
+    print(f"Batch : {batch} - ( Name : {name}, Average : {average} )")
+
+
+# dictionary use chesi cheyyali
+at_risk_students = {}
+
+for student in data:
+    average = (student["consumption"] + student["live"] + student["recording"] + 
+               student["assignment_sub"] + student["assignment_score"]) / 5
+    
+    if average < 30:
+        batch = student["batch"]
+        name = student["name"]
+
+         # Batch inka dictionary lo lekapothe, kotha empty list ni create chestham
+        if batch not in at_risk_students:
+            at_risk_students[batch] = []
+        at_risk_students[batch].append((name, average))
+
+# Dictionary structure print chesi chuddam
+print("At_Risk_Students Dictionary:")
+print(at_risk_students)
+print("-" * 50)
+
+# 2. Presentation loops (Batch-wise presentation)
+print("# Batch wise At Risk Students Details:")
+for batch, students_list in at_risk_students.items():
+    print(f"\nBatch : {batch}")
+    
+    for name, average in students_list:
+        print(f"Name : {name}, Average : {average}")
+print("-" * 50)
+
+"""
+4• average attendance 
+
+"""
+# individual ga find chesthunnam
+total_live = sum([student["live"] for student in data])
+total_reording = sum([student["recording"] for student in data])
+
+print(f"Average Live : {total_live / len(data)}")
+print(f"Average recording : {(total_reording / len(data)):.2f}")
+
+# method 1
+# total_live / len(data) + total_recording / len(data) / 2
+
+# 1. Individual totals mathrame ikkada cheyaley
+total_live = sum([student["live"] for student in data])
+total_reording = sum([student["recording"] for student in data])
+
+# Averages calculations
+avg_live = total_live / len(data)
+avg_recording = total_reording / len(data)
+
+# Rendu averages ni add chesi 2 thoni divide cheyali (leka total components thoni cheyali)
+overall_average = (avg_live + avg_recording) / 2
+
+print(f"Method 1:")
+print(f"Average Live : {avg_live:.2f}")
+print(f"Average recording : {avg_recording:.2f}")
+print(f"Overall Average : {overall_average:.2f}\n")
+
+# method 2
+# Averages calculate chesthunnam
+avg_live = sum([student["live"] for student in data]) / len(data)
+avg_recording = sum([student["recording"] for student in data]) / len(data)
+
+# CORRECTION: Rendu averages math calculations balance avalante 2 thoni divide cheyali
+overall_average = (avg_live + avg_recording) / 2
+
+print(f"Method 2:")
+print(f"Average Live : {avg_live:.2f}")
+print(f"Average recording : {avg_recording:.2f}")
+print(f"Overall Average : {overall_average:.2f}\n")
+
+#method 3
+# 1. సింగిల్ లైన్ లో టోటల్స్ కనుక్కోవడం
+total_points = sum([student["live"] + student["recording"] for student in data])
+
+# 2. SINGLE LINE FORMULA: మొత్తం మార్కులు / (స్టూడెంట్స్ కౌంట్ * 2)
+overall_average = total_points / (len(data) * 2) 
+print(f"Method 3:")
+print(f"Overall Average : {overall_average:.2f}\n")
+
+# method 4
+# లూప్ కోసం ముందుగా టోటల్స్ ని 0 అనుకుందాం
+sum_live = 0
+sum_recording = 0
+
+# లూప్ లోపల ప్రతి ఒక్కరి మార్కులు యాడ్ చేయడం
+for student in data:
+    sum_live += student["live"]
+    sum_recording += student["recording"]
+
+# లూప్ బయటికి వచ్చాక యావరేజ్ లెక్కించడం
+avg_live = sum_live / len(data)
+avg_recording = sum_recording / len(data)
+
+# లూప్ లోపల వచ్చిన రెండు యావరేజ్ లను కలిపి 2 తో డివైడ్ చేయడం
+overall_average_loop = (avg_live + avg_recording) / 2
+
+print(f"Method 4:")
+print(f"Average Live : {avg_live:.2f}")
+print(f"Average recording : {avg_recording:.2f}")
+print(f"Overall Average (Loop Way) : {overall_average_loop:.2f}")
+
+
+"""
+5• average assignment submission
+
+"""
+total_subs = sum(student["assignment_sub"] for student in data)
+print(f"\nmethod 1: List Comprehension")
+print(f"Average Assignment Submission: {total_subs / len(data)}%\n")
+
+# for loop
+total_subs = 0
+for student in data:
+    asgmnt_sub = student["assignment_sub"]
+    total_subs += asgmnt_sub
+avg = total_subs / len(data)
+print(f"Method 2: For Loop")
+print(f"Average Assignment Submission : {avg}%\n")
+
+"""
+6. Average Content Consumption
+
+"""
+total_consumption = sum(student["consumption"] for student in data)
+print(f"Average Content Consumption: {total_consumption / len(data)}%")
